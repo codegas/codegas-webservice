@@ -1,5 +1,0 @@
-org/codegas/webservice/jaxrs/exceptionmapper/JpaNoResultExceptionMapper.class
-org/codegas/webservice/jaxrs/exceptionmapper/IllegalArgumentExceptionMapper.class
-org/codegas/webservice/jaxrs/example/HelloResource.class
-org/codegas/webservice/jaxrs/exceptionmapper/DomainEntityConflictExceptionMapper.class
-org/codegas/webservice/jaxrs/filter/CORSResponseFilter.class

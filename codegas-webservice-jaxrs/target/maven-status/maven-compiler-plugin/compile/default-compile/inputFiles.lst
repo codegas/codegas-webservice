@@ -1,5 +1,0 @@
-/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-jaxrs/src/main/java/org/codegas/webservice/jaxrs/example/HelloResource.java
-/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-jaxrs/src/main/java/org/codegas/webservice/jaxrs/exceptionmapper/DomainEntityConflictExceptionMapper.java
-/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-jaxrs/src/main/java/org/codegas/webservice/jaxrs/exceptionmapper/JpaNoResultExceptionMapper.java
-/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-jaxrs/src/main/java/org/codegas/webservice/jaxrs/filter/CORSResponseFilter.java
-/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-jaxrs/src/main/java/org/codegas/webservice/jaxrs/exceptionmapper/IllegalArgumentExceptionMapper.java
