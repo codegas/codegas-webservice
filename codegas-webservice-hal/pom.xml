@@ -19,6 +19,10 @@
         </dependency>
         <dependency>
             <groupId>com.theoryinpractise</groupId>
+            <artifactId>halbuilder-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-json</artifactId>
         </dependency>
         <dependency>

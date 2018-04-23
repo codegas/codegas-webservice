@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.codegas</groupId>
         <artifactId>codegas-pom-lib</artifactId>
-        <version>1.1.1</version>
+        <version>1.2.0</version>
     </parent>
 
     <artifactId>codegas-webservice</artifactId>
@@ -48,14 +48,24 @@
 
             <!-- Third Party Dependencies -->
             <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>18.0</version>
+            </dependency>
+            <dependency>
                 <groupId>com.theoryinpractise</groupId>
                 <artifactId>halbuilder-api</artifactId>
                 <version>4.0.1</version>
             </dependency>
             <dependency>
                 <groupId>com.theoryinpractise</groupId>
+                <artifactId>halbuilder-core</artifactId>
+                <version>4.0.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.theoryinpractise</groupId>
                 <artifactId>halbuilder-json</artifactId>
-                <version>4.0.3</version>
+                <version>4.0.6</version>
             </dependency>
             <dependency>
                 <groupId>commons-cli</groupId>
@@ -84,4 +94,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>analyze</id>
+                        <goals>
+                            <goal>analyze-only</goal>
+                        </goals>
+                        <configuration>
+                            <failOnWarning>true</failOnWarning>
+                            <ignoreNonCompile>true</ignoreNonCompile>
+                            <outputXML>true</outputXML>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
