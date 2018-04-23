@@ -1,0 +1,8 @@
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/jaxrs/HalJsonMediaType.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/representation/HalJsonRepresentationFactory.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/api/HalLink.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/api/HalRepresentation.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/jaxrs/HalResourceLinkBuilder.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/jaxrs/HalResource.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/representation/HalRepresentationImpl.java
+/Users/spierce/Workspace/grapp/codegas-webservice/codegas-webservice-hal/src/main/java/org/codegas/webservice/hal/api/HalRepresentationFactory.java
