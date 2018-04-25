@@ -2,36 +2,34 @@ package org.codegas.webservice.hal.representation;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
 
+import org.codegas.webservice.hal.api.HalConfig;
 import org.codegas.webservice.hal.api.HalLink;
 import org.codegas.webservice.hal.api.HalRepresentation;
 import org.codegas.webservice.hal.api.HalRepresentationFactory;
 
 import com.theoryinpractise.halbuilder.json.JsonRepresentationFactory;
 
-public final class HalJsonRepresentationFactory extends JsonRepresentationFactory implements HalRepresentationFactory {
+public class HalJsonRepresentationFactory extends JsonRepresentationFactory implements HalRepresentationFactory {
 
-    public HalJsonRepresentationFactory() {
-        this(Collections.emptyMap());
-    }
+    private final HalConfig halConfig;
 
-    public HalJsonRepresentationFactory(Map<String, String> curies) {
-        curies.forEach(this::withNamespace);
+    public HalJsonRepresentationFactory(HalConfig halConfig) {
+        this.halConfig = halConfig;
+        halConfig.getCuries().forEach(this::withNamespace);
         withFlag(PRETTY_PRINT);
         withFlag(COALESCE_ARRAYS);
     }
 
     public HalRepresentation createFor(Object resource) {
-        return new HalRepresentationImpl(HAL_JSON, newRepresentation()).withBean(wrapResource(resource));
+        return new HalRepresentationImpl(newRepresentation(), HAL_JSON, halConfig.getBaseHref()).withBean(wrapResource(resource));
     }
 
     public HalRepresentation createForLinks(Iterable<HalLink> links) {
-        return new HalRepresentationImpl(HAL_JSON, newRepresentation()).withLinks(links);
+        return new HalRepresentationImpl(newRepresentation(), HAL_JSON, halConfig.getBaseHref()).withLinks(links);
     }
 
-    private Object wrapResource(Object resource) {
+    protected Object wrapResource(Object resource) {
         if (resource == null || resource.getClass().isPrimitive() || CharSequence.class.isInstance(resource)) {
             return new PrimitiveWrapper(resource);
         } else if (Collection.class.isInstance(resource)) {

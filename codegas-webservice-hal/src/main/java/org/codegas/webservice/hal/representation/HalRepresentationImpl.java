@@ -18,13 +18,16 @@ import com.theoryinpractise.halbuilder.api.Representation;
 
 class HalRepresentationImpl implements HalRepresentation, Representation {
 
-    private final String contentType;
-
     private final Representation delegate;
 
-    public HalRepresentationImpl(String contentType, Representation delegate) {
-        this.contentType = contentType;
+    private final String contentType;
+
+    private final String hrefPrefix;
+
+    public HalRepresentationImpl(Representation delegate, String contentType, String hrefPrefix) {
         this.delegate = delegate;
+        this.contentType = contentType;
+        this.hrefPrefix = hrefPrefix;
     }
 
     public HalRepresentation withLinks(Iterable<HalLink> halLinks) {
@@ -35,8 +38,7 @@ class HalRepresentationImpl implements HalRepresentation, Representation {
     }
 
     public HalRepresentation withLink(HalLink halLink) {
-        delegate.withLink(halLink.getRel(), halLink.getHref());
-        return this;
+        return withLink(halLink.getRel(), halLink.getHref());
     }
 
     public HalRepresentation withEmbeddeds(String rel, Iterable<HalRepresentation> halResources) {
@@ -48,8 +50,7 @@ class HalRepresentationImpl implements HalRepresentation, Representation {
 
     public HalRepresentation withEmbedded(String rel, HalRepresentation halRepresentation) {
         if (halRepresentation instanceof ReadableRepresentation) {
-            delegate.withRepresentation(rel, (ReadableRepresentation) halRepresentation);
-            return this;
+            return withRepresentation(rel, ReadableRepresentation.class.cast(halRepresentation));
         }
 
         throw new IllegalArgumentException("I don't know how to represent this Embedded HAL Resource: " + halRepresentation);
@@ -62,7 +63,7 @@ class HalRepresentationImpl implements HalRepresentation, Representation {
 
     @Override
     public HalRepresentationImpl withLink(String rel, String href) {
-        delegate.withLink(rel, href);
+        delegate.withLink(rel, hrefPrefix + href);
         return this;
     }
 
@@ -74,7 +75,7 @@ class HalRepresentationImpl implements HalRepresentation, Representation {
 
     @Override
     public HalRepresentationImpl withLink(String rel, String href, String name, String title, String hrefLang, String profile) {
-        delegate.withLink(rel, href, name, title, hrefLang, profile);
+        delegate.withLink(rel, hrefPrefix + href, name, title, hrefLang, profile);
         return this;
     }
 
