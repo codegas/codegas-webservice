@@ -15,7 +15,7 @@
         <!-- Codegas Compile Dependencies -->
         <dependency>
             <groupId>org.codegas</groupId>
-            <artifactId>codegas-commons</artifactId>
+            <artifactId>codegas-commons-lang</artifactId>
         </dependency>
 
         <!-- Third Party Provided Dependencies -->

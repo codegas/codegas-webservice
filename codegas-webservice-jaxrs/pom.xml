@@ -15,7 +15,7 @@
         <!-- Codegas Provided Dependencies -->
         <dependency>
             <groupId>org.codegas</groupId>
-            <artifactId>codegas-commons</artifactId>
+            <artifactId>codegas-commons-domain</artifactId>
             <scope>provided</scope>
         </dependency>
 

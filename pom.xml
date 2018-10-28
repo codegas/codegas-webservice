@@ -33,6 +33,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- Dependency Versions -->
+        <codegas-commons.version>3.0.0</codegas-commons.version>
         <jetty.version>9.4.9.v20180320</jetty.version>
         <spring.version>4.3.14.RELEASE</spring.version>
     </properties>
@@ -42,8 +43,13 @@
             <!-- Codegas Dependencies -->
             <dependency>
                 <groupId>org.codegas</groupId>
-                <artifactId>codegas-commons</artifactId>
-                <version>2.0.1</version>
+                <artifactId>codegas-commons-domain</artifactId>
+                <version>${codegas-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codegas</groupId>
+                <artifactId>codegas-commons-lang</artifactId>
+                <version>${codegas-commons.version}</version>
             </dependency>
 
             <!-- Third Party Dependencies -->
